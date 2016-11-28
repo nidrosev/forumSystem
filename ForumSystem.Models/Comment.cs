@@ -19,6 +19,9 @@ namespace ForumSystem.Models
         public int AuthorId { get; set; }
         public int ThemeId { get; set; }
         public virtual Theme Theme { get; set; }
+
         
+        
+
     }
 }

@@ -86,3 +86,7 @@ c:\users\ndrosev\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\b
 c:\users\ndrosev\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\obj\Debug\ForumSystem.csprojResolveAssemblyReference.cache
 c:\users\ndrosev\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\obj\Debug\ForumSystem.dll
 c:\users\ndrosev\documents\visual studio 2015\Projects\ForumSystem\ForumSystem\obj\Debug\ForumSystem.pdb
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Data.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Models.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Data.pdb
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Models.pdb

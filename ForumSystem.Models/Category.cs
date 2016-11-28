@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ForumSystem.Models
 {
-    class Category : BaseModel
+    public class Category : BaseModel
     {
         public string Name { get; set; }
     }

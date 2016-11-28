@@ -1,0 +1,14 @@
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\obj\Debug\ForumSystem.Models.csprojResolveAssemblyReference.cache
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\ForumSystem.Models.dll.config
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\ForumSystem.Models.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\ForumSystem.Models.pdb
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\EntityFramework.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\EntityFramework.xml
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\obj\Debug\ForumSystem.Models.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Models\obj\Debug\ForumSystem.Models.pdb
