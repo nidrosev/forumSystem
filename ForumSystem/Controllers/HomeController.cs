@@ -11,6 +11,11 @@ namespace ForumSystem.Controllers
 {
     public class HomeController : BaseController
     {
+        private IForumSystemData Data;
+        public HomeController(IForumSystemData data)
+        {
+            this.Data = data;
+        }
         public ActionResult Index()
         {
             var themes = this.Data.Themes.All().ToList();

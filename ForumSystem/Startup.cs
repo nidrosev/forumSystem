@@ -12,12 +12,11 @@ namespace ForumSystem
         {
             ConfigureAuth(app);
         }
-    }
-
-    private static StandardKernel CreateKernel()
-    {
-        var kernel = new StandardKernel();
-        kernel.Load(Assembly.GetExecutingAssembly());
-        return kernel;
+        private static StandardKernel CreateKernel()
+        {
+            var kernel = new StandardKernel();
+            kernel.Load(Assembly.GetExecutingAssembly());
+            return kernel;
+        }
     }
 }

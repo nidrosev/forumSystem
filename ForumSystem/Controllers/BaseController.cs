@@ -11,15 +11,7 @@ namespace ForumSystem.Controllers
 {
     public abstract class BaseController : Controller
     {
-        public BaseController() : this(new ForumSystemData())
-        {
 
-        }
-        public BaseController(IForumSystemData data)
-        {
-            this.Data = data;
-        }
-        public IForumSystemData Data { get; set; }
 
         protected IMapper Mapper
         {

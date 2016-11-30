@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ForumSystem.Data
 {
-    public class ForumSystemDbContext : IdentityDbContext
+    public class ForumSystemDbContext : IdentityDbContext 
     {
 
         public ForumSystemDbContext() : base("ForumSytemDbConnection")
