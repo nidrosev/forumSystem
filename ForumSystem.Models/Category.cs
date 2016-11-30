@@ -9,5 +9,6 @@ namespace ForumSystem.Models
     public class Category : BaseModel
     {
         public string Name { get; set; }
+        public string ShortDescription { get; set; }
     }
 }

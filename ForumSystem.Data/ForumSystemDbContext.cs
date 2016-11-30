@@ -23,11 +23,24 @@ namespace ForumSystem.Data
             set;
         }
 
-        public IDbSet<Theme> Theme
+        public IDbSet<Theme> Themes
         {
             get;
             set;
         }
+
+        public IDbSet<Comment> Comments
+        {
+            get;
+            set;
+        }
+
+        public IDbSet<Category> Categories
+        {
+            get;
+            set;
+        }
+
 
         public static ForumSystemDbContext Create()
         {

@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace ForumSystem.Data
 {
     using ForumSystem.Data.Repositories;
-    using ForumSystem.Models;
-    interface IForumSystemData
+    using Models;
+
+    public interface IForumSystemData
     {
 
         IRepository<ApplicationUser> Users
@@ -16,14 +17,20 @@ namespace ForumSystem.Data
             get;
         }
 
-        IRepository<Category> Category
+        IRepository<Theme> Themes
         {
             get;
         }
-        IRepository<Comment> Comment
+
+        IRepository<Comment> Comments
         {
             get;
         }
+        IRepository<Category> Categories
+        {
+            get;
+        }
+
 
         IRepository<T> GetRepository<T>() where T : class;
     }

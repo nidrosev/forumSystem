@@ -14,3 +14,13 @@ C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.D
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.csprojResolveAssemblyReference.cache
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.dll
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.pdb
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.InitialCreate.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.csproj.GenerateResource.Cache
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.fixProblemAuthorIdTheme.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.fixProblemAuthorIdTheme2.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.fixProblemAuthorIdTheme3.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.fixProblemAuthorIdTheme4.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.fixProblemAuthorIdTheme5.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.fixProblemAuthorIdTheme7.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.fixProblemAuthorIdTheme8.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.fixProblemAuthorIdTheme10.resources

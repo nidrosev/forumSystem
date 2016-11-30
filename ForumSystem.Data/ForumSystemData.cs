@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ForumSystem.Data.Repositories;
-using ForumSystem.Models;
 using System.Data.Entity;
+using ForumSystem.Models;
 
 namespace ForumSystem.Data
 {
-    class ForumSystemData : IForumSystemData
+   public class ForumSystemData : IForumSystemData
     {
         private DbContext context;
         private Dictionary<Type, object> repositories;
@@ -33,15 +33,22 @@ namespace ForumSystem.Data
             }
         }
 
-        public IRepository<Theme> Theme
+        public IRepository<Theme> Themes
         {
             get
             {
                 return this.GetRepository<Theme>();
             }
         }
+        public IRepository<Comment> Comments
+        {
+            get
+            {
+                return this.GetRepository<Comment>();
+            }
+        }
 
-        public IRepository<Category> Category
+        public IRepository<Category> Categories
         {
             get
             {
@@ -49,13 +56,6 @@ namespace ForumSystem.Data
             }
         }
 
-        public IRepository<Comment> Comment
-        {
-            get
-            {
-                return this.GetRepository<Comment>();
-            }
-        }
         public IRepository<T> GetRepository<T>() where T : class
         {
             var typeOfRepository = typeof(T);

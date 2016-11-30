@@ -90,3 +90,7 @@ C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\b
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Models.dll
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Data.pdb
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Models.pdb
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\AutoMapper.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Common.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Common.pdb
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\AutoMapper.xml
