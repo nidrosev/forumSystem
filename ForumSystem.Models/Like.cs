@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ForumSystem.Models
 {
-    class Like:BaseModel
+   public class Like:BaseModel
     {
-        //public  MyProperty { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

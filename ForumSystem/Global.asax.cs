@@ -1,6 +1,10 @@
-﻿using ForumSystem.Common.Mapping;
+﻿using ForumSystem.App_Start;
+using ForumSystem.Common.Mapping;
+using ForumSystem.Data;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -20,7 +24,8 @@ namespace ForumSystem
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            AutoMapperConfig.RegisterMappings();
+            AutoMapperConfiguration.RegisterMappings();
+
         }
     }
 }

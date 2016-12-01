@@ -50,7 +50,12 @@
     <Compile Include="Mapping\IHaveCustomMappings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ForumSystem.Models\ForumSystem.Models.csproj">
+      <Project>{B32700B8-AF7B-4D28-AC2B-F079DBF5F951}</Project>
+      <Name>ForumSystem.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

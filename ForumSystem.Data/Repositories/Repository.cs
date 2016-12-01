@@ -30,7 +30,7 @@ namespace ForumSystem.Data.Repositories
         }
 
         public T Find(object id)
-        {
+        {        
             return this.set.Find(id);
         }
 

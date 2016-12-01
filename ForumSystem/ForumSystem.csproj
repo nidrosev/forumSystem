@@ -219,13 +219,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\Mappings\AutoMapperConfig.cs" />
+    <Compile Include="App_Start\Mappings\ThemeProfile.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\PostsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -269,6 +274,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Areas\Administration\Views\web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -320,9 +326,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administration\Models\" />
+    <Folder Include="Areas\Administration\Views\Home\" />
+    <Folder Include="Areas\Administration\Views\Posts\" />
+    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
@@ -345,6 +356,10 @@
     <ProjectReference Include="..\ForumSystem.Models\ForumSystem.Models.csproj">
       <Project>{b32700b8-af7b-4d28-ac2b-f079dbf5f951}</Project>
       <Name>ForumSystem.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ForumSystem.Services\ForumSystem.Services.csproj">
+      <Project>{8D35DD0A-4FA2-43E8-8D3B-D045FCA67F01}</Project>
+      <Name>ForumSystem.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

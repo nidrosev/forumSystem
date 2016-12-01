@@ -11,6 +11,8 @@ namespace ForumSystem.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Data;
+    using Services.Contracts;
+    using Services;
 
     public static class NinjectWebCommon 
     {
@@ -67,20 +69,20 @@ namespace ForumSystem.App_Start
                .To<ForumSystemData>()
                .InRequestScope();
 
-            /*kernel
-               .Bind<IPostService>()
-               .To<PostService>()
+           kernel
+               .Bind<IThemeService>()
+               .To<ThemeService>()
                .InRequestScope();
+            /*
+           kernel
+              .Bind<IUsersService>()
+              .To<UsersService>()
+              .InRequestScope();
 
-            kernel
-               .Bind<IUsersService>()
-               .To<UsersService>()
-               .InRequestScope();
-
-            kernel
-               .Bind<ICacheService>()
-               .To<HttpCacheService>()
+           kernel
+              .Bind<ICacheService>()
+              .To<HttpCacheService>()
 .InRequestScope();*/
-        }        
+        }
     }
 }

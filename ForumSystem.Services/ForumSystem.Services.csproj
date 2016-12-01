@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IForumService.cs" />
-    <Compile Include="ForumService.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="Contracts\IThemeService.cs" />
+    <Compile Include="Contracts\IService.cs" />
+    <Compile Include="ThemeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

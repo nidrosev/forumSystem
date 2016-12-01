@@ -13,12 +13,12 @@ namespace ForumSystem.Controllers
     {
 
 
-        protected IMapper Mapper
+        /*protected IMapper Mapper
         {
             get
             {
                 return AutoMapperConfig.Configuration.CreateMapper();
             }
-        }
+        }*/
     }
 }

@@ -48,7 +48,7 @@ namespace ForumSystem.Data
             }
         }
 
-        public IRepository<Category> Categories
+       public IRepository<Category> Categories
         {
             get
             {

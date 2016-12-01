@@ -6,11 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace ForumSystem.Models
 {
     public class Comment:BaseModel
     {
+        public Comment()
+        {
+            this.Likes = new HashSet<Like>();
+        }
+
         [Required]
         public string CommentContent { get; set; }
 
@@ -20,8 +24,6 @@ namespace ForumSystem.Models
         public int ThemeId { get; set; }
         public virtual Theme Theme { get; set; }
 
-        
-        
-
+        public virtual ICollection<Like> Likes { get; set; }
     }
 }

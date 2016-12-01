@@ -6,32 +6,60 @@ using System.Web.Mvc;
 using ForumSystem.Data;
 using ForumSystem.Models;
 using ForumSystem.ViewModels;
+using ForumSystem.Services;
+using ForumSystem.Services.Contracts;
+using AutoMapper;
 
 namespace ForumSystem.Controllers
 {
     public class HomeController : BaseController
     {
-        private IForumSystemData Data;
-        public HomeController(IForumSystemData data)
+        private IThemeService themeService;
+        public HomeController(IThemeService service)
         {
-            this.Data = data;
+            this.themeService = service;
         }
         public ActionResult Index()
         {
-            var themes = this.Data.Themes.All().ToList();
-            // var postVM = Mapper.Map<ThemeViewModel>(themes);  
-            ICollection<ThemeViewModel> themesVM = themes.Select(p => new ThemeViewModel()
+            var themes = themeService.GetAll().ToList();
+            /*var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Theme, ThemeViewModel>();
+            });
+            var mapper = config.CreateMapper();
+            var themesVM = mapper.Map<ThemeViewModel>(themes);  */
+
+            var themesVM = AutoMapper.Mapper.Map<List<Theme>, List<ThemeViewModel>>(themes);
+           /* ICollection<ThemeViewModel> themesVM = themes.Select(p => new ThemeViewModel()
             {
                 Content = p.Content,
                 Title = p.Title,
-                //CreatedOn = p.CreatedOn,
+                CreatedOn = p.CreatedOn,
                 Author = p.AuthorId,
                 Id = p.Id,
                 Comments = p.Comments
-            }).ToList();
+            }).ToList();*/
             return View(themesVM);
         }
+        public ActionResult Details(string Id)
+        {
+            int ThemeId;
+            int.TryParse(Id, out ThemeId);
+            var themeObject = themeService.Find(ThemeId);
+           // var post = Mapper.Map<Theme, ThemeViewModel>(themeObject);
+            var post = new ThemeViewModel()
+            {
+                Content = themeObject.Content,
+                Title = themeObject.Title,
+                CreatedOn = themeObject.CreatedOn,
+                Author = themeObject.AuthorId,
+                Id = themeObject.Id,
+                //Comments = themeObject.Comments
+            };
 
+
+            return View(post);
+        }
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

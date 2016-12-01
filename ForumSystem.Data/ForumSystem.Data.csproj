@@ -60,41 +60,13 @@
     <Compile Include="ForumSystemData.cs" />
     <Compile Include="ForumSystemDbContext.cs" />
     <Compile Include="IForumSystemData.cs" />
-    <Compile Include="Migrations\201611281552265_InitialCreate.cs" />
-    <Compile Include="Migrations\201611281552265_InitialCreate.Designer.cs">
-      <DependentUpon>201611281552265_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201612012146229_InitialCreate.cs" />
+    <Compile Include="Migrations\201612012146229_InitialCreate.Designer.cs">
+      <DependentUpon>201612012146229_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611300928062_fixProblemAuthorIdTheme.cs" />
-    <Compile Include="Migrations\201611300928062_fixProblemAuthorIdTheme.Designer.cs">
-      <DependentUpon>201611300928062_fixProblemAuthorIdTheme.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611300932590_fixProblemAuthorIdTheme2.cs" />
-    <Compile Include="Migrations\201611300932590_fixProblemAuthorIdTheme2.Designer.cs">
-      <DependentUpon>201611300932590_fixProblemAuthorIdTheme2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611300936146_fixProblemAuthorIdTheme3.cs" />
-    <Compile Include="Migrations\201611300936146_fixProblemAuthorIdTheme3.Designer.cs">
-      <DependentUpon>201611300936146_fixProblemAuthorIdTheme3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611300937385_fixProblemAuthorIdTheme4.cs" />
-    <Compile Include="Migrations\201611300937385_fixProblemAuthorIdTheme4.Designer.cs">
-      <DependentUpon>201611300937385_fixProblemAuthorIdTheme4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611300939574_fixProblemAuthorIdTheme5.cs" />
-    <Compile Include="Migrations\201611300939574_fixProblemAuthorIdTheme5.Designer.cs">
-      <DependentUpon>201611300939574_fixProblemAuthorIdTheme5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611301043398_fixProblemAuthorIdTheme7.cs" />
-    <Compile Include="Migrations\201611301043398_fixProblemAuthorIdTheme7.Designer.cs">
-      <DependentUpon>201611301043398_fixProblemAuthorIdTheme7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611301050596_fixProblemAuthorIdTheme8.cs" />
-    <Compile Include="Migrations\201611301050596_fixProblemAuthorIdTheme8.Designer.cs">
-      <DependentUpon>201611301050596_fixProblemAuthorIdTheme8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611301102296_fixProblemAuthorIdTheme10.cs" />
-    <Compile Include="Migrations\201611301102296_fixProblemAuthorIdTheme10.Designer.cs">
-      <DependentUpon>201611301102296_fixProblemAuthorIdTheme10.cs</DependentUpon>
+    <Compile Include="Migrations\201612012151024_new begining.cs" />
+    <Compile Include="Migrations\201612012151024_new begining.Designer.cs">
+      <DependentUpon>201612012151024_new begining.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,32 +84,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611281552265_InitialCreate.resx">
-      <DependentUpon>201611281552265_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612012146229_InitialCreate.resx">
+      <DependentUpon>201612012146229_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611300928062_fixProblemAuthorIdTheme.resx">
-      <DependentUpon>201611300928062_fixProblemAuthorIdTheme.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611300932590_fixProblemAuthorIdTheme2.resx">
-      <DependentUpon>201611300932590_fixProblemAuthorIdTheme2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611300936146_fixProblemAuthorIdTheme3.resx">
-      <DependentUpon>201611300936146_fixProblemAuthorIdTheme3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611300937385_fixProblemAuthorIdTheme4.resx">
-      <DependentUpon>201611300937385_fixProblemAuthorIdTheme4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611300939574_fixProblemAuthorIdTheme5.resx">
-      <DependentUpon>201611300939574_fixProblemAuthorIdTheme5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301043398_fixProblemAuthorIdTheme7.resx">
-      <DependentUpon>201611301043398_fixProblemAuthorIdTheme7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301050596_fixProblemAuthorIdTheme8.resx">
-      <DependentUpon>201611301050596_fixProblemAuthorIdTheme8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611301102296_fixProblemAuthorIdTheme10.resx">
-      <DependentUpon>201611301102296_fixProblemAuthorIdTheme10.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612012151024_new begining.resx">
+      <DependentUpon>201612012151024_new begining.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
