@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using ForumSystem.Common.Mapping;
 using ForumSystem.Data;
 using System;
 using System.Collections.Generic;

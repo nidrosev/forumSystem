@@ -28,6 +28,19 @@ namespace ForumSystem.Services
             base.Add(entity);
             base.SaveChanges();
         }
+
+        public override void Update(Theme entity)
+        {
+            entity.UpdatedOn = DateTime.Now;
+            base.Update(entity);
+            base.SaveChanges();
+        }
+        public override void Delete(object Id)
+        {
+            base.Delete(Id);
+            base.SaveChanges();
+        }
+
         public override Theme Find(object Id)
         {
             return base.Find(Id);

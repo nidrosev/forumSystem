@@ -1,5 +1,4 @@
-﻿using ForumSystem.Common.Mapping;
-using ForumSystem.Models;
+﻿using ForumSystem.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,7 @@ namespace ForumSystem.ViewModels
       //  public string SubHeader { get; set; }
         public string AuthorId { get; set; }
         public string Author { get; set; }
-
+        public DateTime? UpdatedOn { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }
 }

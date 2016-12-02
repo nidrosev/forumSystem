@@ -17,3 +17,5 @@ C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.D
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.InitialCreate.resources
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.csproj.GenerateResource.Cache
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.newbegining.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.AddfieldUpdatedOn.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.CategoryIdupdatetobenull.resources

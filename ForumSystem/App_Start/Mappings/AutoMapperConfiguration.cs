@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using ForumSystem.App_Start.Mappings;
-using ForumSystem.Common.Mapping;
 using ForumSystem.Models;
 using ForumSystem.ViewModels;
 using System;
@@ -17,6 +16,7 @@ namespace ForumSystem.App_Start
             Mapper.Initialize(cfg =>
             {
                 cfg.AddProfile(new ThemeProfile());
+                cfg.AddProfile(new AdminThemeProfile());
             });
 
 

@@ -12,7 +12,9 @@ namespace ForumSystem.App_Start.Mappings
     {
         protected override void Configure()
         {
-            CreateMap<Theme, ThemeViewModel>().ForMember(dest => dest.CreatedOn, opt => opt.MapFrom(src => src.CreatedOn));
+            CreateMap<Theme, ThemeViewModel>()
+                .ForMember(dest => dest.CreatedOn, opt => opt.MapFrom(src => src.CreatedOn))
+                .ForMember(dest => dest.UpdatedOn, opt => opt.MapFrom(src => src.UpdatedOn));
         }
 
     }
