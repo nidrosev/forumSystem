@@ -54,14 +54,6 @@ namespace ForumSystem.Areas.Administration.Controllers
             }
              
              var dbtheme = Mapper.Map<AdminThemeViewModel,Theme>(theme);
-
-            /*var dbtheme = new Theme()
-            {
-                Content = theme.Content,
-                Title = theme.Title,
-                CreatedOn = DateTime.Now,
-                CategoryId = 2
-            };*/
             this.themeService.Add(dbtheme);
             return RedirectToAction("Index");
         }
@@ -96,6 +88,7 @@ namespace ForumSystem.Areas.Administration.Controllers
           //  post.Users = new SelectList(this.usersService.GetAll(), "Id", "Email", post.AuthorId);
             return View(theme);
         }
+        [HttpGet]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,7 +103,7 @@ namespace ForumSystem.Areas.Administration.Controllers
             return View(theme);
         }
 
-        // POST: Administration/Posts/Delete/5
+        // POST: Administration/Themes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -118,5 +111,7 @@ namespace ForumSystem.Areas.Administration.Controllers
             this.themeService.Delete(id);
             return RedirectToAction("Index");
         }
+
+
     }
 }

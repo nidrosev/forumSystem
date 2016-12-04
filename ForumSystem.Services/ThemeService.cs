@@ -25,6 +25,7 @@ namespace ForumSystem.Services
         public override void Add(Theme entity)
         {
             entity.CreatedOn = DateTime.Now;
+            entity.UpdatedOn = DateTime.Now;
             base.Add(entity);
             base.SaveChanges();
         }

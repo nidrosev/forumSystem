@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
+    <Compile Include="CommentService.cs" />
+    <Compile Include="Contracts\ICommentService.cs" />
     <Compile Include="Contracts\IThemeService.cs" />
     <Compile Include="Contracts\IService.cs" />
     <Compile Include="ThemeService.cs" />

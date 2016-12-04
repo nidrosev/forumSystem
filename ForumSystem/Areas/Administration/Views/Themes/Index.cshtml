@@ -11,8 +11,11 @@
         </div>
         <div class="blog-post-body">
             <h2>@Html.ActionLink(@item.Title, "Details", "Home", new { @item.Id }, null)</h2>
-            <div class="post-meta"><span>by <a href="#">@item.Author</a></span>/<span><i class="fa fa-clock-o"></i>March 14, 2015</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
+            <div class="post-meta"><span>by <a href="#">@item.Author</a></span>/
+            <span><i class="fa fa-clock-o"></i>@item.CreatedOn</span>/<span><i class="fa fa-clock-o"></i>@item.UpdatedOn</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
             <p>@item.Content</p>
+            @Html.ActionLink("Edit", "Edit", "Themes", new { @item.Id }, new { @class = "btn btn-default" })
+            @Html.ActionLink("Delete", "Delete", "Themes", new { @item.Id }, new { @class = "btn btn-default" })
             <div class="read-more"><a href="#">Continue Reading</a></div>
         </div>
     </article>

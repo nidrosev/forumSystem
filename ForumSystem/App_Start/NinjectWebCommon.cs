@@ -73,16 +73,16 @@ namespace ForumSystem.App_Start
                .Bind<IThemeService>()
                .To<ThemeService>()
                .InRequestScope();
-            /*
+           
            kernel
-              .Bind<IUsersService>()
-              .To<UsersService>()
+              .Bind<ICommentService>()
+              .To<CommentService>()
               .InRequestScope();
-
-           kernel
-              .Bind<ICacheService>()
-              .To<HttpCacheService>()
-.InRequestScope();*/
+            /*
+                      kernel
+                         .Bind<ICacheService>()
+                         .To<HttpCacheService>()
+           .InRequestScope();*/
         }
     }
 }

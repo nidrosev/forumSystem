@@ -20,7 +20,7 @@ namespace ForumSystem.Models
 
         public virtual ApplicationUser Author { get; set; }
 
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
         public int ThemeId { get; set; }
         public virtual Theme Theme { get; set; }
 
