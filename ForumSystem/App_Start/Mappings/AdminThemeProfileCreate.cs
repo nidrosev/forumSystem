@@ -16,9 +16,6 @@ namespace ForumSystem.App_Start.Mappings
                 .ForMember(dest => dest.CreatedOn, opt => opt.MapFrom(src => src.CreatedOn))
                 .ForMember(dest => dest.UpdatedOn, opt => opt.MapFrom(src => src.UpdatedOn))
                 .ForMember(dest => dest.CategoryId, opt => opt.Ignore())
-                .ForMember(dest => dest.AuthorId, opt => opt.Ignore())
-                 .ForMember(dest => dest.Author, opt => opt.Ignore())
-                 .ForMember(dest => dest.Comments, opt => opt.Ignore())
             ;
         }
 

@@ -21,13 +21,14 @@ namespace ForumSystem.Services
        
         public override IQueryable<Comment> GetAll()
         {
-            return base.GetAll(); //.OrderByDescending(p => p.CreatedOn);
+            return base.GetAll().OrderByDescending(p => p.CreatedOn);
         }
 
         public void Add(Comment entity)
         {
             entity.CreatedOn = DateTime.Now;
             entity.UpdatedOn = DateTime.Now;
+
             base.Add(entity);
             base.SaveChanges();
         }

@@ -4,6 +4,7 @@ using ForumSystem.Models;
 using ForumSystem.Services;
 using ForumSystem.Services.Contracts;
 using ForumSystem.ViewModels;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ using System.Web.Mvc;
 
 namespace ForumSystem.Controllers
 {
-    public class CommentController : BaseController
+    public class CommentController : Controller
     {
         private ICommentService commentService;
         private object data;
@@ -59,7 +60,8 @@ namespace ForumSystem.Controllers
             {
                 return RedirectToAction("Details/" + comment.ThemeId, "Home");
             }
-            
+            //  comment.AuthorId = User.Identity.GetUserId();
+            comment.AuthorId = User.Identity.GetUserId();
             var dbcomment = Mapper.Map<CommentViewModel, Comment>(comment);
 
             this.commentService.Add(dbcomment);

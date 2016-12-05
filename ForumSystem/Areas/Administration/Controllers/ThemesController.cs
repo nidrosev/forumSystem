@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
 using System.Net;
+using Microsoft.AspNet.Identity;
 
 namespace ForumSystem.Areas.Administration.Controllers
 {
@@ -52,8 +53,9 @@ namespace ForumSystem.Areas.Administration.Controllers
             {
                 return RedirectToAction("Index");
             }
-             
-             var dbtheme = Mapper.Map<AdminThemeViewModel,Theme>(theme);
+            theme.AuthorId = User.Identity.GetUserId();
+          
+            var dbtheme = Mapper.Map<AdminThemeViewModel,Theme>(theme);
             this.themeService.Add(dbtheme);
             return RedirectToAction("Index");
         }
@@ -65,6 +67,7 @@ namespace ForumSystem.Areas.Administration.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Theme theme = this.themeService.Find(id);
+          
             if (theme == null)
             {
                 return HttpNotFound();
@@ -84,8 +87,8 @@ namespace ForumSystem.Areas.Administration.Controllers
                 this.themeService.Update(dbTheme);
                 return RedirectToAction("Index");
             }
-
-          //  post.Users = new SelectList(this.usersService.GetAll(), "Id", "Email", post.AuthorId);
+            theme.AuthorId = User.Identity.Name;
+            //  post.Users = new SelectList(this.usersService.GetAll(), "Id", "Email", post.AuthorId);
             return View(theme);
         }
         [HttpGet]

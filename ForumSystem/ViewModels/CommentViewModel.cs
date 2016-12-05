@@ -19,7 +19,7 @@ namespace ForumSystem.ViewModels
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
         public virtual ApplicationUser Author { get; set; }
-        public int AuthorId { get; set; }
+        public string AuthorId { get; set; }
         public int ThemeId { get; set; }
         public Theme Theme { get; set; }
         public virtual ICollection<Like> Likes { get; set; }

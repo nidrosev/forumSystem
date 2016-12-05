@@ -9,7 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using ForumSystem.Models;
-
+using ForumSystem.Data;
+using System.Collections.Generic;
+using ForumSystem.Services.Contracts;
 
 namespace ForumSystem.Controllers
 {
@@ -18,9 +20,12 @@ namespace ForumSystem.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
-        public AccountController()
+        private ForumSystemDbContext context { get; set; }
+        private IUsersService userService;
+        public AccountController(IUsersService uservice)
         {
+           this.context = new ForumSystemDbContext();
+            this.userService = uservice;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -140,6 +145,10 @@ namespace ForumSystem.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+           // var Roles = new RegisterViewModel();
+            //Roles.UserRoles = new SelectList(context.Roles.ToList(), "Id", "UserName");
+
+            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
             return View();
         }
 
@@ -157,7 +166,9 @@ namespace ForumSystem.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    //Assign Role to user Here 
+                    await this.UserManager.AddToRoleAsync(user.Id, model.Email);
+                    //Ends Here
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

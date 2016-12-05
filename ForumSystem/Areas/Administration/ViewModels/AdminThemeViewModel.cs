@@ -17,7 +17,7 @@ namespace ForumSystem.Areas.Administration.ViewModels
         public string  Content { get; set; }
         public DateTime? CreatedOn { get; set; }
         public string AuthorId { get; set; }
-        public string Author { get; set; }
+        public ApplicationUser Author { get; set; }
         public int CategoryId { get; set; }
         public DateTime? UpdatedOn { get; set; }
         public ICollection<Comment> Comments { get; set; }

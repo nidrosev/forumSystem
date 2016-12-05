@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ForumSystem.Data;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +11,14 @@ namespace ForumSystem.Controllers
 {
     public abstract class BaseController : Controller
     {
-
-
-        /*protected IMapper Mapper
+       /* protected ForumSystemDbContext Data { get; private set; }
+        public BaseController(ForumSystemDbContext data)
         {
-            get
-            {
-                return AutoMapperConfig.Configuration.CreateMapper();
-            }
-        }*/
+            this.Data = data;
+        }
+  */
+
+
+
     }
 }

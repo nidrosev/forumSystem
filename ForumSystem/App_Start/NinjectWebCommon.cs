@@ -14,20 +14,20 @@ namespace ForumSystem.App_Start
     using Services.Contracts;
     using Services;
 
-    public static class NinjectWebCommon 
+    public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
         /// Starts the application
         /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
+
         /// <summary>
         /// Stops the application.
         /// </summary>
@@ -35,7 +35,7 @@ namespace ForumSystem.App_Start
         {
             bootstrapper.ShutDown();
         }
-        
+
         /// <summary>
         /// Creates the kernel that will manage your application.
         /// </summary>
@@ -69,20 +69,24 @@ namespace ForumSystem.App_Start
                .To<ForumSystemData>()
                .InRequestScope();
 
-           kernel
-               .Bind<IThemeService>()
-               .To<ThemeService>()
+            kernel
+                .Bind<IThemeService>()
+                .To<ThemeService>()
+                .InRequestScope();
+
+            kernel
+               .Bind<ICommentService>()
+               .To<CommentService>()
                .InRequestScope();
-           
-           kernel
-              .Bind<ICommentService>()
-              .To<CommentService>()
-              .InRequestScope();
-            /*
-                      kernel
-                         .Bind<ICacheService>()
-                         .To<HttpCacheService>()
-           .InRequestScope();*/
+
+            kernel
+               .Bind<IUsersService>()
+               .To<UsersService>()
+               .InRequestScope();
+            kernel
+               .Bind<ICategoryService>()
+               .To<CategoryService>()
+               .InRequestScope();
         }
     }
 }

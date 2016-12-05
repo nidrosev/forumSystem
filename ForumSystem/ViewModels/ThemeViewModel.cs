@@ -16,7 +16,7 @@ namespace ForumSystem.ViewModels
         public DateTime? CreatedOn { get; set; }
       //  public string SubHeader { get; set; }
         public string AuthorId { get; set; }
-        public string Author { get; set; }
+        public ApplicationUser Author { get; set; }
         public DateTime? UpdatedOn { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }

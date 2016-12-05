@@ -76,6 +76,18 @@
     <Compile Include="Migrations\201612021508114_CategoryId update to be null.Designer.cs">
       <DependentUpon>201612021508114_CategoryId update to be null.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612042214292_Change AuthorId to string and add it to likes.cs" />
+    <Compile Include="Migrations\201612042214292_Change AuthorId to string and add it to likes.Designer.cs">
+      <DependentUpon>201612042214292_Change AuthorId to string and add it to likes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612051003282_Author fix.cs" />
+    <Compile Include="Migrations\201612051003282_Author fix.Designer.cs">
+      <DependentUpon>201612051003282_Author fix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612051500007_add default roles.cs" />
+    <Compile Include="Migrations\201612051500007_add default roles.Designer.cs">
+      <DependentUpon>201612051500007_add default roles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepository.cs" />
@@ -103,6 +115,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612021508114_CategoryId update to be null.resx">
       <DependentUpon>201612021508114_CategoryId update to be null.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612042214292_Change AuthorId to string and add it to likes.resx">
+      <DependentUpon>201612042214292_Change AuthorId to string and add it to likes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612051003282_Author fix.resx">
+      <DependentUpon>201612051003282_Author fix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612051500007_add default roles.resx">
+      <DependentUpon>201612051500007_add default roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -14,7 +14,8 @@ namespace ForumSystem.App_Start.Mappings
         {
             CreateMap<Theme, ThemeViewModel>()
                 .ForMember(dest => dest.CreatedOn, opt => opt.MapFrom(src => src.CreatedOn))
-                .ForMember(dest => dest.UpdatedOn, opt => opt.MapFrom(src => src.UpdatedOn));
+                .ForMember(dest => dest.UpdatedOn, opt => opt.MapFrom(src => src.UpdatedOn))
+                .ForMember(dest => dest.AuthorId, opt => opt.MapFrom(src => src.AuthorId));
         }
 
     }

@@ -15,8 +15,8 @@ namespace ForumSystem.App_Start.Mappings
             CreateMap<Comment, CommentViewModel>().ReverseMap()
                 .ForMember(dest => dest.CreatedOn, opt => opt.MapFrom(src => src.CreatedOn))
                 .ForMember(dest => dest.UpdatedOn, opt => opt.MapFrom(src => src.UpdatedOn))
-                 .ForMember(dest => dest.Author, opt => opt.Ignore())
-                  .ForMember(dest => dest.ThemeId, opt => opt.MapFrom(src=>src.ThemeId));
+                .ForMember(dest => dest.ThemeId, opt => opt.MapFrom(src => src.ThemeId))
+                .ForMember(dest => dest.AuthorId, opt => opt.MapFrom(src => src.AuthorId));
         }
     }
 }

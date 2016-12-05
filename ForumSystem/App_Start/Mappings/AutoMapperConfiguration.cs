@@ -18,6 +18,7 @@ namespace ForumSystem.App_Start
                 cfg.AddProfile(new ThemeProfile());
                 cfg.AddProfile(new AdminThemeProfile());
                 cfg.AddProfile(new CommentProfile());
+                cfg.AddProfile(new AdminCategoryProfile());
             });
 
 

@@ -2,7 +2,8 @@
     ViewBag.Title = "Admin Home Page";
 }
 @model IEnumerable<AdminThemeViewModel>
-
+@Html.ActionLink("Add new Theme", "Create", "Themes", null, new { @class = "btn btn-default" })<br/>
+@Html.ActionLink("Role", "Index", "Role")
 @foreach (var item in Model)
 {
     <article class="blog-post">
@@ -11,7 +12,7 @@
         </div>
         <div class="blog-post-body">
             <h2>@Html.ActionLink(@item.Title, "Details", "Home", new { @item.Id }, null)</h2>
-            <div class="post-meta"><span>by <a href="#">@item.Author</a></span>/
+            <div class="post-meta"><span>by <a href="#">@item.Author.UserName</a></span>/
             <span><i class="fa fa-clock-o"></i>@item.CreatedOn</span>/<span><i class="fa fa-clock-o"></i>@item.UpdatedOn</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
             <p>@item.Content</p>
             @Html.ActionLink("Edit", "Edit", "Themes", new { @item.Id }, new { @class = "btn btn-default" })
