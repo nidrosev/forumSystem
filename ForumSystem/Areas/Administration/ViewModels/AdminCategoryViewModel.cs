@@ -14,6 +14,5 @@ namespace ForumSystem.Areas.Administration.ViewModels
         public string Name { get; set; }
         public string ShortDescription { get; set; }
 
-        public virtual ICollection<Category> CategoryThemes { get; set; }
     }
 }

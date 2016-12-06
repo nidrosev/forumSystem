@@ -14,5 +14,6 @@ namespace ForumSystem.Services.Contracts
         void Update(Theme entity);
         void Delete(object id);
         Theme Find(object Id);
+        ICollection<Theme> FindByCategory(int Id);
     }
 }

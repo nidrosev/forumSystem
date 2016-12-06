@@ -10,15 +10,18 @@ using AutoMapper;
 using System.Net;
 using Microsoft.AspNet.Identity;
 
+
 namespace ForumSystem.Areas.Administration.Controllers
 {
     public class ThemesController : Controller
     {
         private IThemeService themeService;
+        private ICategoryService categoryService;
 
-        public ThemesController(IThemeService service)
+        public ThemesController(IThemeService service, ICategoryService cservice)
         {
             this.themeService = service;
+            this.categoryService = cservice;
         }
         // GET: Administration/Posts
         public ActionResult Index()
@@ -40,7 +43,9 @@ namespace ForumSystem.Areas.Administration.Controllers
         public ActionResult Create()
         {
             AdminThemeViewModel themeVM = new AdminThemeViewModel();
-            // commentVM.Author = new SelectList(this.usersService.GetAll(), "Id", "UserName");
+            ViewBag.CategoriesVM = this.categoryService.GetAll().ToList();
+            
+
             return View(themeVM);
         }
 
@@ -54,7 +59,7 @@ namespace ForumSystem.Areas.Administration.Controllers
                 return RedirectToAction("Index");
             }
             theme.AuthorId = User.Identity.GetUserId();
-          
+        
             var dbtheme = Mapper.Map<AdminThemeViewModel,Theme>(theme);
             this.themeService.Add(dbtheme);
             return RedirectToAction("Index");
@@ -72,7 +77,7 @@ namespace ForumSystem.Areas.Administration.Controllers
             {
                 return HttpNotFound();
             }
-
+            ViewBag.CategoriesVM = this.categoryService.GetAll().ToList();
             AdminThemeViewModel themeVM = Mapper.Map<AdminThemeViewModel>(theme);
             return View(themeVM);
         }
@@ -84,10 +89,11 @@ namespace ForumSystem.Areas.Administration.Controllers
             if (ModelState.IsValid)
             {
                 var dbTheme = Mapper.Map<AdminThemeViewModel,Theme>(theme);
+                dbTheme.AuthorId = User.Identity.GetUserId();
                 this.themeService.Update(dbTheme);
                 return RedirectToAction("Index");
             }
-            theme.AuthorId = User.Identity.Name;
+            
             //  post.Users = new SelectList(this.usersService.GetAll(), "Id", "Email", post.AuthorId);
             return View(theme);
         }

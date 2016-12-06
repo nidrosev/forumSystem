@@ -19,5 +19,7 @@ namespace ForumSystem.ViewModels
         public ApplicationUser Author { get; set; }
         public DateTime? UpdatedOn { get; set; }
         public ICollection<Comment> Comments { get; set; }
+
+        public ICollection<Category> Categories { get; set; }
     }
 }

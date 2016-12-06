@@ -1,8 +1,11 @@
-﻿using ForumSystem.Models;
+﻿using AutoMapper;
+using ForumSystem.Areas.Administration.ViewModels;
+using ForumSystem.Models;
 using ForumSystem.Services.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -18,7 +21,7 @@ namespace ForumSystem.Areas.Administration.Controllers
         // GET: Administration/Categories
         public ActionResult Index()
         {
-            var categories = this.cservice.GetAll();
+            var categories = this.cservice.GetAll().ToList();
             return View(categories);
         }
 
@@ -27,10 +30,77 @@ namespace ForumSystem.Areas.Administration.Controllers
         {
             return View();
         }
-        [HttpGet]
-        public ActionResult Create()
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Create(AdminCategoryViewModel category)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            var dbcategory = Mapper.Map<AdminCategoryViewModel, Category>(category);
+            this.cservice.Add(dbcategory);
+
+            return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = this.cservice.Find(id);
+
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+
+            AdminCategoryViewModel categoryVM = Mapper.Map<AdminCategoryViewModel>(category);
+            return View(categoryVM);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Edit(AdminCategoryViewModel category)
+        {
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            var dbcategory = Mapper.Map<AdminCategoryViewModel, Category>(category);
+            this.cservice.Update(dbcategory);
+
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Category category = this.cservice.Find(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(category);
+        }
+
+        // POST: Administration/Themes/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            this.cservice.Delete(id);
+            return RedirectToAction("Index");
+        }
+
     }
 }

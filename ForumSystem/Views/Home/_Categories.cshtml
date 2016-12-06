@@ -1,0 +1,11 @@
+﻿@model ICollection<AdminCategoryViewModel>
+<div class="sidebar-widget">
+    <h3 class="sidebar-title">Categories</h3>
+    <div class="widget-container">
+        <ul>            
+            @foreach (var item in Model) { 
+            <li>@Html.ActionLink(@item.Name,"CategoryTheme","Home",new { @item.Id}, null)</li>
+            }
+        </ul>
+    </div>
+</div>

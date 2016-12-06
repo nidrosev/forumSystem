@@ -19,6 +19,7 @@ namespace ForumSystem.Areas.Administration.ViewModels
         public string AuthorId { get; set; }
         public ApplicationUser Author { get; set; }
         public int CategoryId { get; set; }
+        public Category Category { get; set; }
         public DateTime? UpdatedOn { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }

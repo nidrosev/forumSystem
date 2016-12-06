@@ -15,8 +15,6 @@ namespace ForumSystem.App_Start.Mappings
             CreateMap<Theme, AdminThemeViewModel>().ReverseMap()
                 .ForMember(dest => dest.CreatedOn, opt => opt.MapFrom(src => src.CreatedOn))
                 .ForMember(dest => dest.UpdatedOn, opt => opt.MapFrom(src => src.UpdatedOn))
-                .ForMember(dest => dest.CategoryId, opt => opt.Ignore())
-                .ForMember(dest => dest.AuthorId, opt => opt.MapFrom(src => src.AuthorId))
             ;
         }
 

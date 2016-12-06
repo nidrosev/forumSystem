@@ -15,7 +15,6 @@ namespace ForumSystem.App_Start.Mappings
             CreateMap<AdminThemeViewModel,Theme>()
                 .ForMember(dest => dest.CreatedOn, opt => opt.MapFrom(src => src.CreatedOn))
                 .ForMember(dest => dest.UpdatedOn, opt => opt.MapFrom(src => src.UpdatedOn))
-                .ForMember(dest => dest.CategoryId, opt => opt.Ignore())
             ;
         }
 

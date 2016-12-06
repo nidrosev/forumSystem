@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@model IEnumerable<ThemeViewModel>
+@model ICollection<Theme>
 
 @foreach (var item in Model)
 {
@@ -13,9 +13,11 @@
             <h2>@Html.ActionLink(@item.Title, "Details", "Home", new { @item.Id }, null)</h2>
             <div class="post-meta"><span>by <a href="#">@item.Author.UserName</a></span>/<span><i class="fa fa-clock-o"></i>@item.CreatedOn</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span></div>
             <p>@item.Content</p>
-           
-          
+
+
             <div class="read-more">@Html.ActionLink("Continue Reading", "Details", "Home", new { @item.Id }, null)</div>
         </div>
     </article>
 }
+
+

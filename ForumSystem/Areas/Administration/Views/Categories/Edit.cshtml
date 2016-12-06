@@ -1,4 +1,4 @@
-﻿@model AdminThemeViewModel
+﻿@model AdminCategoryViewModel
 
 
 @section Scripts {
@@ -33,33 +33,28 @@
         @Html.HiddenFor(model => Model.Id)
         @Html.HiddenFor(model => model.CreatedOn)
         <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Content, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ShortDescription, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Content, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
+                @Html.TextAreaFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ShortDescription, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
-            @Html.LabelFor(model => model.CategoryId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.CategoryId, new SelectList(ViewBag.CategoriesVM, "Id", "Name"), Model.Category.Name, htmlAttributes: new { @class = "form-control" })
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.Users, "AuthorId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("AuthorId", Model.Users, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Users, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
-       @*<div class="form-group">
-            @Html.LabelFor(model => model.Users, "AuthorId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("AuthorId", Model.Users, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Users, "", new { @class = "text-danger" })
-            </div>
-        </div>
         *@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -72,3 +67,5 @@
 <div>
     @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
 </div>
+
+

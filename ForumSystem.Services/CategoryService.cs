@@ -18,7 +18,8 @@ namespace ForumSystem.Services
 
         public void Add(Category entity)
         {
-
+            entity.CreatedOn = DateTime.Now;
+            entity.UpdatedOn = DateTime.Now;
             base.Add(entity);
             base.SaveChanges();
         }
@@ -35,6 +36,7 @@ namespace ForumSystem.Services
 
         public void Update(Category entity)
         {
+            entity.UpdatedOn = DateTime.Now;
             base.Update(entity);
             base.SaveChanges();
         }
