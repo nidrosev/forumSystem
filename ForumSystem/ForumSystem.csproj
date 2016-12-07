@@ -219,6 +219,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Mappings\AdminUserProfile.cs" />
     <Compile Include="App_Start\Mappings\AdminCategoryProfile.cs" />
     <Compile Include="App_Start\Mappings\AdminThemeProfileCreate.cs" />
     <Compile Include="App_Start\Mappings\AutoMapperConfiguration.cs" />
@@ -233,6 +234,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdminUserController.cs" />
     <Compile Include="Areas\Administration\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Administration\Controllers\RoleController.cs" />
     <Compile Include="Areas\Administration\Controllers\ThemesController.cs" />
@@ -295,6 +297,7 @@
     <Content Include="Areas\Administration\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Categories\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\AdminUser\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

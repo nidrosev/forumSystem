@@ -10,6 +10,6 @@ namespace ForumSystem.Services.Contracts
     public interface IUsersService :IService<ApplicationUser>
     {
         IQueryable<ApplicationUser> GetAll();
-
+        // Boolean CheckAuthUser(ApplicationUser Id);
     }
 }

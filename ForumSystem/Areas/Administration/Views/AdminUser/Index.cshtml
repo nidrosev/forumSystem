@@ -1,0 +1,11 @@
+﻿@model ICollection<RegisterViewModel>
+
+
+@foreach (var item in @Model)
+{
+    <h2>@item.UserRoles</h2>
+<h2>@item.Email</h2>
+<h2>@item.Password</h2>
+}
+
+

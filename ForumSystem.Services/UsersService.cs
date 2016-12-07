@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ForumSystem.Data;
 using ForumSystem.Models;
+using Microsoft.AspNet.Identity;
+using System.Web.Mvc;
 
 namespace ForumSystem.Services.Contracts
 {
@@ -19,9 +21,6 @@ namespace ForumSystem.Services.Contracts
             return base.GetAll();            
         }
 
-        public ApplicationUser Find(object id)
-        {
-            return base.Find(id);
-        }
+       
     }
 }

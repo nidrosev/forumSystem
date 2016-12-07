@@ -145,10 +145,11 @@ namespace ForumSystem.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-           // var Roles = new RegisterViewModel();
+            // var Roles = new RegisterViewModel();
             //Roles.UserRoles = new SelectList(context.Roles.ToList(), "Id", "UserName");
-
-            ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+            ViewBag.UserRoles = context.Roles.Where(u => !u.Name.Contains("Admin"))
+                                           .ToList();
+         
             return View();
         }
 
@@ -167,14 +168,17 @@ namespace ForumSystem.Controllers
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     //Assign Role to user Here 
-                    await this.UserManager.AddToRoleAsync(user.Id, model.Email);
+                    if (!User.IsInRole("Admin")) { model.UserRoles = "Editor"; }
+                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     //Ends Here
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
+                   
+                    ViewBag.UserRoles = context.Roles.Where(u => !u.Name.Contains("Admin"))
+                               .ToList();
                     return RedirectToAction("Index", "Home");
                 }
                 AddErrors(result);
@@ -183,6 +187,8 @@ namespace ForumSystem.Controllers
             // If we got this far, something failed, redisplay form
             return View(model);
         }
+
+
 
         //
         // GET: /Account/ConfirmEmail

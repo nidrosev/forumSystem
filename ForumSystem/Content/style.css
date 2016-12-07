@@ -384,3 +384,9 @@ footer .footer-socials a:hover {
 footer .footer-bottom {
 	padding: 10px 0 40px;
 }
+.admin-home{
+    padding-right:100px;
+    font-size:35px;
+    font-weight:bold;
+
+}
