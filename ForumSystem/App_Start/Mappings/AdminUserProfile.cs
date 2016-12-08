@@ -12,8 +12,10 @@ namespace ForumSystem.App_Start.Mappings
     {
         protected override void Configure()
         {
-            CreateMap<ApplicationUser, RegisterViewModel>().ReverseMap()
-                .ForMember(dest => dest.Roles, opt => opt.MapFrom(src => src.UserRoles));
+            CreateMap<ApplicationUser, UserModifyViewModel>()
+                .ForMember(dest => dest.UserRoles, opt => opt.MapFrom(src => src.Roles))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.Email))
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.Id));
         }
     }
 }

@@ -1,0 +1,20 @@
+﻿@model ICollection<AdminThemeViewModel>
+<div class="sidebar-widget">
+    <h3 class="sidebar-title">Featured Posts</h3>
+    <div class="widget-container">
+        @foreach (var item in Model)
+        {
+            <article class="widget-post">
+                @*<div class="post-image">
+                        <a href="post.html"><img src="images/90x60-5.jpg" alt=""></a>
+                    </div>*@
+                <div class="post-body">
+                    <h2>@Html.ActionLink(@item.Title, "CategoryTheme", "Home", new { @item.Id }, null)</h2>
+                    <div class="post-meta">
+                        <span><i class="fa fa-clock-o"></i>@item.CreatedOn</span> <span><a href="post.html"><i class="fa fa-comment-o">@item.Author.UserName</i> </a></span>
+                    </div>
+                </div>
+            </article>
+        }
+    </div>
+</div>

@@ -25,6 +25,8 @@ namespace ForumSystem
                       "~/Scripts/jquery.bxslider.js",
                       "~/Scripts/mooz.scripts.min.js"
                       ));
+            bundles.Add(new ScriptBundle("~/bundles/admin").Include(
+                        "~/Scripts/tinymce/tinymce.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ajax").Include(
                       "~/Scripts/jquery.unobtrusive-ajax.js",

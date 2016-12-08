@@ -16,6 +16,7 @@ namespace ForumSystem.App_Start
     using Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Microsoft.AspNet.Identity;
+    using Common.Caching;
 
     public static class NinjectWebCommon
     {
@@ -94,7 +95,10 @@ namespace ForumSystem.App_Start
                .Bind<IUserStore<ApplicationUser>>()
                .To<UserStore<ApplicationUser>>()
                .InRequestScope();
-            
+            kernel
+               .Bind<ICacheService>()
+               .To<HttpCacheService>()
+               .InRequestScope();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace ForumSystem.Services.Contracts
         public UsersService(IForumSystemData data, UserManager<ApplicationUser> userManager) : base(data)
         {
             this._userManager = userManager;
+            
         }
 
         public IQueryable<ApplicationUser> GetAll()
@@ -32,8 +33,15 @@ namespace ForumSystem.Services.Contracts
         }
         ApplicationUser Find(string Id)
         {
+            
             return _userManager.FindById(Id);
         }
+       /* public List<string> GetRoles()
+        {
+            var roles = System.Web.Security.Roles.GetAllRoles().ToList();
+            return roles;
+        }*/
+ 
 
     }
 }

@@ -113,4 +113,21 @@ namespace ForumSystem.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
+
+    public class UserModifyViewModel
+    {
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Display(Name = "User Role")]
+        public string UserRoles { get; set; }
+
+        [Required]
+        public string UserId { get; set; }
+
+        public string UserName { get; set; }
+
+    }
 }

@@ -230,6 +230,7 @@
     <Compile Include="App_Start\Mappings\AdminUserProfile.cs" />
     <Compile Include="App_Start\Mappings\AdminCategoryProfile.cs" />
     <Compile Include="App_Start\Mappings\AdminThemeProfileCreate.cs" />
+    <Compile Include="App_Start\Mappings\AdminUserProfileReverse.cs" />
     <Compile Include="App_Start\Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -309,11 +310,13 @@
     <Content Include="Areas\Administration\Views\AdminUser\Index.cshtml" />
     <Content Include="Areas\Administration\Views\AdminUser\Edit.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\ckeditor.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.bxslider.js" />
     <Content Include="Scripts\jquery.bxslider.min.js" />
+    <Content Include="Scripts\jquery.tinymce.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -368,10 +371,12 @@
     <Content Include="Views\Comment\Delete.cshtml" />
     <Content Include="Views\Home\_Categories.cshtml" />
     <Content Include="Views\Home\CategoryTheme.cshtml" />
+    <Content Include="Views\Home\_FeaturedThemes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\Home\" />
+    <Folder Include="Scripts\tinymce\" />
     <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>

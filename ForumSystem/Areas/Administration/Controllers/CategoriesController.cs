@@ -26,6 +26,7 @@ namespace ForumSystem.Areas.Administration.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -34,6 +35,7 @@ namespace ForumSystem.Areas.Administration.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(AdminCategoryViewModel category)
         {
             if (!ModelState.IsValid)
@@ -47,6 +49,7 @@ namespace ForumSystem.Areas.Administration.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -66,6 +69,7 @@ namespace ForumSystem.Areas.Administration.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(AdminCategoryViewModel category)
         {
             if (!ModelState.IsValid)
@@ -79,6 +83,7 @@ namespace ForumSystem.Areas.Administration.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -96,6 +101,7 @@ namespace ForumSystem.Areas.Administration.Controllers
         // POST: Administration/Themes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             this.cservice.Delete(id);

@@ -1,7 +1,7 @@
 ﻿
 @model AdminCategoryViewModel
 
-@*section Scripts {
+@section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
         <script>
             tinymce.init({
@@ -17,7 +17,7 @@
                 content_css: '//www.tinymce.com/css/codepen.min.css'
             });
         </script>
-    }*@
+    }
 <h1 class="page-header">Create</h1>
 
 
@@ -53,6 +53,6 @@
     }
 
     <div>
-        @Html.ActionLink("Back to List", "Index")
+        @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
     </div>
 

@@ -25,6 +25,8 @@
                 <div class="navbar-collapse collapse">
 
                     <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Back To Forum", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+
                         <li class="admin-home">@Html.ActionLink("Admin Panel", "Index", "Themes", new { area = "Administration" }, new { @class = "navbar-brand" })</li>
                   
                         <li>@Html.ActionLink("Categories", "Index", "Categories", new { area = "Administration" }, new { @class = "navbar-brand" }) </li>
@@ -32,6 +34,21 @@
                         <li>@Html.ActionLink("Roles", "Index", "Role", new { area = "Administration" }, new { @class = "navbar-brand" })</li>
 
                     </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="top-menu-li-right">
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @class = "navbar-brand top-menu-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <button type="submit" class="button-theme-index">
+                                <span class="fa fa-files-o"></span> <span class="navbar-brand top-menu-right-button-submit">Log Out</span>
+                            </button>
+                        } 
+                    </div>
+
+                        <div class="top-menu-li-right">@Html.ActionLink(@User.Identity.Name, "", "", null, new { @class = "navbar-brand top-menu-right" })</div>
+                    }
                 </div>
 
            
@@ -48,6 +65,7 @@
     </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/admin")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/ajax")
     @RenderSection("scripts", required: false)

@@ -51,16 +51,8 @@ namespace ForumSystem.Services
 
         public ICollection<Theme> FindByCategory(int Id)
         {
-
-            var themesAll = base.GetAll().ToList();
-            foreach (var item in themesAll)
-            {
-                if (item.CategoryId == Id)
-                {
-                    themes.Add(item);
-                }
-            }
-            return themes;
+            var themesAll = base.GetAll().Where(m => m.CategoryId == Id).ToList();
+            return themesAll;
         }
     }
 }

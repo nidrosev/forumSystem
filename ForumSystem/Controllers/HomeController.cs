@@ -13,7 +13,7 @@ using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using ForumSystem.Areas.Administration.ViewModels;
 using PagedList;
-
+using ForumSystem.Common.Caching;
 
 namespace ForumSystem.Controllers
 {
@@ -22,11 +22,12 @@ namespace ForumSystem.Controllers
         private IThemeService themeService;
         //private IUsersService ThemeUser;
         private ICategoryService categoryService;
-        //private ICommentService commentService;
-        public HomeController(IThemeService tservice,ICategoryService cservice)
+        private ICacheService cacheService;
+        public HomeController(IThemeService tservice,ICategoryService cservice, ICacheService cache)
         {
             this.themeService = tservice;
             this.categoryService = cservice;
+            this.cacheService = cache;
         }
         public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
@@ -41,13 +42,18 @@ namespace ForumSystem.Controllers
             }
 
             ViewBag.CurrentFilter = searchString;
-            var themes = themeService.GetAll().ToList();
-            var themesVM = AutoMapper.Mapper.Map<List<Theme>, List<ThemeViewModel>>(themes);
+
+            var themes = this.cacheService.Get<List<Theme>>("allThemes", () =>
+            {
+                return themeService.GetAll().ToList();
+            }, 60);
+            var themesVM = Mapper.Map<List<Theme>, List<ThemeViewModel>>(themes);
             int pageSize = 3;
             int pageNumber = (page ?? 1);
            
             return View(themesVM.ToPagedList(pageNumber, pageSize));
         }
+       
         public ActionResult Details(string Id)
         {
             int ThemeId;
@@ -87,6 +93,12 @@ namespace ForumSystem.Controllers
             var categoriesQuarable = this.categoryService.GetAll().ToList();
             var categories = Mapper.Map<List<Category>, List<AdminCategoryViewModel>>(categoriesQuarable);
             return PartialView("_Categories", categories);
+        }
+        public PartialViewResult ShowFeaturedPost()
+        {
+            var featureThemesQuarable = this.themeService.GetAll().OrderBy(m=>m.CreatedOn).Take(5).ToList();
+            var featureThemes = Mapper.Map<List<Theme>, List<AdminThemeViewModel>>(featureThemesQuarable);
+            return PartialView("_FeaturedThemes", featureThemes);
         }
     }
 }

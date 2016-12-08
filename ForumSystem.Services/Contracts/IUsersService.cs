@@ -14,6 +14,7 @@ namespace ForumSystem.Services.Contracts
         void Update(ApplicationUser entity);
         void Delete(object id);
         ApplicationUser Find(object Id);
+      //  List<string> GetRoles();
         // Boolean CheckAuthUser(ApplicationUser Id);
     }
 }

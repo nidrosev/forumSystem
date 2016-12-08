@@ -39,6 +39,7 @@ namespace ForumSystem.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Create(int Id)
         {
             if (Id == null)
@@ -54,6 +55,7 @@ namespace ForumSystem.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
+        [Authorize]
         public ActionResult Create(CommentViewModel comment)
         {
             if (!ModelState.IsValid)
@@ -68,7 +70,7 @@ namespace ForumSystem.Controllers
      
             return RedirectToAction("Details/"+comment.ThemeId, "Home");
         }
-
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,6 +90,7 @@ namespace ForumSystem.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
+        [Authorize]
         public ActionResult Edit(CommentViewModel comment)
         {
             if (ModelState.IsValid)
@@ -102,6 +105,7 @@ namespace ForumSystem.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,6 +123,7 @@ namespace ForumSystem.Controllers
         // POST: Administration/Themes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             this.commentService.Delete(id);
