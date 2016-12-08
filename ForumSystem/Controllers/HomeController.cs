@@ -12,6 +12,8 @@ using AutoMapper;
 using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using ForumSystem.Areas.Administration.ViewModels;
+using PagedList;
+
 
 namespace ForumSystem.Controllers
 {
@@ -26,11 +28,25 @@ namespace ForumSystem.Controllers
             this.themeService = tservice;
             this.categoryService = cservice;
         }
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
             var themes = themeService.GetAll().ToList();
             var themesVM = AutoMapper.Mapper.Map<List<Theme>, List<ThemeViewModel>>(themes);
-            return View(themesVM);
+            int pageSize = 3;
+            int pageNumber = (page ?? 1);
+           
+            return View(themesVM.ToPagedList(pageNumber, pageSize));
         }
         public ActionResult Details(string Id)
         {

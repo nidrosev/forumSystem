@@ -35,7 +35,8 @@ namespace ForumSystem
                       "~/Content/bootstrap.css",
                       "~/Content/site.css",
                       "~/Content/bootstrap-theme.css",
-                      "~/Content/style.css"
+                      "~/Content/style.css",
+                      "~/Content/PagedList.css"
                       ));
         }
     }

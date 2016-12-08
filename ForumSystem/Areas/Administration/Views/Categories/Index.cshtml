@@ -1,24 +1,56 @@
 ﻿@model ICollection<Category>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Categories";
 }
+@{int i = 0;}
 
-@Html.ActionLink("Add new category", "Create", "Category", null, new { @class = "btn btn-default" })<br />
-@foreach (var item in Model)
-{
-    <article class="blog-post">
-        <div class="blog-post-image">
-            <a href="post.html"><img src="images/750x500-1.jpg" alt=""></a>
-        </div>
-        <div class="blog-post-body">
-            <h2>@item.Name</h2>
-            <div class="post-meta">
+<h1 class="page-header">
+    Categories</h1>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">
 
-                <span><i class="fa fa-clock-o"></i>@item.CreatedOn</span>/<span><i class="fa fa-clock-o"></i>@item.UpdatedOn</span>/<span><i class="fa fa-comment-o"></i> <a href="#">343</a></span>
+                    <div class="table-button-theme">@Html.ActionLink("Add new category", "Create", "Categories", null, new { @class = "btn btn-default btn-theme" })</div>
+
+
+                </div>
             </div>
-            <p>@item.ShortDescription</p>
-            @Html.ActionLink("Edit", "Edit", "Categories", new { @item.Id }, new { @class = "btn btn-default" })
-            @Html.ActionLink("Delete", "Delete", "Categories", new { @item.Id }, new { @class = "btn btn-default" })
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">
+                    Category Table
+
+                </div>
+            </div>
+            <div class="bootstrap-admin-panel-content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Short Description</th>
+                            <th>Created on</th>
+                            <th>Update on</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            i++;
+                            <tr>
+                                <td>@i</td>
+                                <td>@item.Name</td>
+                                <td>@item.ShortDescription</td>
+                                <td>@item.CreatedOn</td>
+                                <td>@item.UpdatedOn</td>
+                                <td>@Html.ActionLink("Edit", "Edit", "Categories", new { @item.Id }, new { @class = "btn btn-default" })</td>
+                                <td>@Html.ActionLink("Delete", "Delete", "Categories", new { @item.Id }, new { @class = "btn btn-default" })</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </article>
-}
+    </div>

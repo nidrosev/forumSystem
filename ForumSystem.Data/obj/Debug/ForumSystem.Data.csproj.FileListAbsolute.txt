@@ -22,3 +22,4 @@ C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.D
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.ChangeAuthorIdtostringandaddittolikes.resources
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.Authorfix.resources
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.adddefaultroles.resources
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem.Data\obj\Debug\ForumSystem.Data.Migrations.CreateAdmin.resources

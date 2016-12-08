@@ -22,3 +22,68 @@ select,
 textarea {
     max-width: 280px;
 }
+.table-buttons{
+    float:right;
+
+}
+.table-button-theme{
+    padding-left:15px;
+    padding-top:10px;
+    float:right;
+ 
+}
+.btn.btn-default.btn-theme{
+    font-size:16px;
+    font-weight:bold;
+    color:red;
+}
+.nav.navbar-nav a{
+    font-size:16px;
+    font-weight:bold;
+   
+}
+.nav.navbar-nav li{
+    padding-right:22px;
+}
+.nav.navbar-nav li.admin-home {
+    padding-right:100px;
+}
+.nav.navbar-nav li.admin-home a{
+    font-size:25px;
+    color:deepskyblue;
+}
+.container-fluid.theme{
+    padding:30px;
+    font-size:20px;
+    font-style:italic;
+    color:darkblue;
+   
+}
+.navbar-brand.top-menu-right{
+    float:right;
+    font-weight:bold;
+    color:deepskyblue;
+    
+}
+.navbar-brand.top-menu-right-button-submit{
+    float:right;
+    font-weight:bold;
+    padding:0px;
+    color:white;
+}
+
+.top-menu-li-right {
+    float: right;
+    padding: 0 0 0 15px;
+}
+.button-theme-index{
+ background-color: Transparent;
+ border:none;
+ font-weight:bold;
+ padding: 0px;
+ margin:0px;
+}
+.navbar-brand top-menu-right-button{
+    color:deepskyblue;
+   
+}

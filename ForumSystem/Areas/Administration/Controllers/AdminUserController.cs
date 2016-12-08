@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using ForumSystem.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Net;
 
 namespace ForumSystem.Areas.Administration.Controllers
 {
@@ -16,10 +17,10 @@ namespace ForumSystem.Areas.Administration.Controllers
     public class AdminUserController : Controller
     {
         private IUsersService uservice { get; set; }
-        private readonly UserManager<ApplicationUser> _userManager;
+        //private readonly UserManager<ApplicationUser> _userManager;
         public AdminUserController(IUsersService service, UserManager<ApplicationUser> userManager)
         {
-            this._userManager = userManager;
+  
             this.uservice = service;
         }
         // GET: Administration/AdminUser
@@ -32,16 +33,32 @@ namespace ForumSystem.Areas.Administration.Controllers
         [HttpGet]
         public ActionResult Edit(string Id)
         {
-            var model = UserManager().FindById(Id);
-            return View(model);
+            if (Id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ApplicationUser user = this.uservice.Find(Id);
+
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            ApplicationUser userVM = Mapper.Map<ApplicationUser>(user);
+            return View(userVM);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit(ApplicationUser user)
+        public ActionResult Edit(RegisterViewModel user)
         {
-            _userManager.FindById
-            return
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            var dbuser = Mapper.Map<RegisterViewModel, ApplicationUser> (user);
+            this.uservice.Update(dbuser);
+
+            return RedirectToAction("Index");
         }
     }
 }

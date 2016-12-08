@@ -13,6 +13,9 @@ namespace ForumSystem.App_Start
     using Data;
     using Services.Contracts;
     using Services;
+    using Models;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity;
 
     public static class NinjectWebCommon
     {
@@ -87,6 +90,11 @@ namespace ForumSystem.App_Start
                .Bind<ICategoryService>()
                .To<CategoryService>()
                .InRequestScope();
+            kernel
+               .Bind<IUserStore<ApplicationUser>>()
+               .To<UserStore<ApplicationUser>>()
+               .InRequestScope();
+            
         }
     }
 }

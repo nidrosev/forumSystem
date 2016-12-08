@@ -10,6 +10,10 @@ namespace ForumSystem.Services.Contracts
     public interface IUsersService :IService<ApplicationUser>
     {
         IQueryable<ApplicationUser> GetAll();
+
+        void Update(ApplicationUser entity);
+        void Delete(object id);
+        ApplicationUser Find(object Id);
         // Boolean CheckAuthUser(ApplicationUser Id);
     }
 }

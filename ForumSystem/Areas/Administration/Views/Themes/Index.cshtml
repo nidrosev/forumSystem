@@ -1,18 +1,58 @@
 ﻿@{
     ViewBag.Title = "Admin Home Page";
 }
+@{int i = 0;}
 @model IEnumerable<AdminThemeViewModel>
-@Html.ActionLink("Add new Theme", "Create", "Themes", null, new { @class = "btn btn-default" })<br />
-@Html.ActionLink("Role", "Index", "Role")
 
-<table class="admin-table-themes" cellpadding="10">
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td ><h2>@Html.ActionLink(@item.Title, "Details", "Home", new { @item.Id }, null)</h2></td>           
-            <td><p>@item.Content</p></td>
-            <td> @Html.ActionLink("Edit", "Edit", "Themes", new { @item.Id }, new { @class = "btn btn-default" })</td>
-            <td>  @Html.ActionLink("Delete", "Delete", "Themes", new { @item.Id }, new { @class = "btn btn-default" })</td>
-        </tr>
-    }
-</table>
+<h2>Themes</h2>
+
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="text-muted bootstrap-admin-box-title">
+
+                <div class="table-button-theme">@Html.ActionLink("Add new Theme", "Create", "Themes", null, new { @class = "btn btn-default btn-theme" })</div>
+
+
+            </div>
+        </div>
+        <div class="panel-heading">
+            <div class="text-muted bootstrap-admin-box-title">
+                Themes Table
+
+            </div>
+        </div>
+        <div class="bootstrap-admin-panel-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Content</th>
+                        <th>Author</th>
+                        <th>Created On</th>
+                        <th>Updated on</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        i++;
+                        <tr>
+                            <td>@i</td>
+                            <td>@Html.ActionLink(@item.Title, "Details", "Home", new { @item.Id }, null)</td>
+                            <td>@item.Content</td>
+                            <td>@item.Author.UserName</td>
+                            <td>@item.CreatedOn</td>
+                            <td>@item.UpdatedOn</td>
+                            <td>@Html.ActionLink("Edit", "Edit", "Themes", new { @item.Id }, new { @class = "btn btn-default" })</td>
+                            <td>@Html.ActionLink("Delete", "Delete", "Themes", new { @item.Id }, new { @class = "btn btn-default" })</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

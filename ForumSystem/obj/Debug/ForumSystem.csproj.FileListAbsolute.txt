@@ -103,3 +103,7 @@ C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\b
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\Ninject.Web.Mvc.xml
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Services.dll
 C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\ForumSystem.Services.pdb
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\PagedList.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\PagedList.Mvc.dll
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\PagedList.xml
+C:\Users\NDrosev\Documents\Visual Studio 2015\Projects\ForumSystem\ForumSystem\bin\PagedList.Mvc.xml

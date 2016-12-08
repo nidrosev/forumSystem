@@ -2,29 +2,46 @@
 @{
     ViewBag.Title = "Index";
 }
+@{int i = 0;}
+<h2>User Roles</h2>
 
-<h2>Available Roles For Application</h2>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="text-muted bootstrap-admin-box-title">
+               
+                <div class="table-button-theme">@Html.ActionLink("Create Role", "Create", "Role", null, new { @class = "btn btn-default btn-theme" })</div>
 
-@Html.ActionLink("Create Role", "Create", "Role")
 
-<style type="text/css">
-    #tbrole, .c {
-        border: double;
-    }
-</style>
+            </div>
+        </div>
+        <div class="panel-heading">
+            <div class="text-muted bootstrap-admin-box-title">
+                Themes Table
 
-<table id="tbrole">
-    <tr>
-        <td class="c">
-            Role Name
-        </td>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td class="c">
-                @item.Name
-            </td>
-        </tr>
-    }
-</table>
+            </div>
+        </div>
+        <div class="bootstrap-admin-panel-content">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Role Name</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        i++;
+                        <tr>
+                            <td>@i</td>
+                            <td>@item.Name</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

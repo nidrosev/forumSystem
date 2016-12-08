@@ -1,11 +1,47 @@
 ﻿@model ICollection<RegisterViewModel>
 
 
-@foreach (var item in @Model)
-{
-    <h2>@item.UserRoles</h2>
-<h2>@item.Email</h2>
-<h2>@item.Password</h2>
-}
+@{int i = 0;}
 
+<h1 class="page-header">Users</h1>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">
+
+                    <div class="table-button-theme">@Html.ActionLink("Add new User", "Register", "Account", new { @area = "" }, new { @class = "btn btn-default btn-theme" })</div>
+
+
+                </div>
+            </div>
+            <div class="panel-heading">
+                <div class="text-muted bootstrap-admin-box-title">
+                    Category Table
+
+                </div>
+            </div>
+            <div class="bootstrap-admin-panel-content">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>UserName</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            i++;
+                            <tr>
+                                <td>@i</td>
+                                <td>@item.Email</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
